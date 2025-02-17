@@ -1,9 +1,9 @@
 import Config
 
 config :caju, Caju.Repo,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
+  username: System.get_env("DB_USERNAME", "postgres"),
+  password: System.get_env("DB_PASSWORD", "postgres"),
+  hostname: System.get_env("DB_HOSTNAME", "localhost"),
   database: "caju_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
